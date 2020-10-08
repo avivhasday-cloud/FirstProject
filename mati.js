@@ -13,7 +13,7 @@ var Hebrew = {
     title: "משחק במתמטיקה",
     header: "לחץ בשביל להתחיל",
     button1: "התחל",
-    question: "?" + num2 +  " + " + num1 + "כמה זה",
+    question: "",
     button2: "הבא",
     correctAnswer: "כל הכבוד",
     wrongAnswer: "אופסיי, תנסה שוב",
@@ -24,7 +24,7 @@ var English = {
     title: "Math Game",
     header: "Press to start",
     button1: "Start",
-    question: "What is" + num1 + " + " + num2 + "?",
+    question: "bla bla bla",
     button2: "Next",
     correctAnswer: "Good job",
     wrongAnswer: "sorry, try again",
@@ -32,15 +32,7 @@ var English = {
 };
 
 
-// function isHebrew(){
-//     if (HebrewWasChosen==true){
-//         console.log("HE");
-//     }
-//     if (EnglishWasChosen==true){
-//         console.log("EN");
-//     }
-// }
-// console.log(isHebrew());
+
 
 function initialization(){
     changeBG();
@@ -93,8 +85,8 @@ function mathQuestions(){
      num1 = Math.floor((Math.random() * 5) + 1);
      num2 = Math.floor((Math.random() * 5) + 1);
      result = num1 + num2;
-    //  question.innerHTML = "What is " + num1 + " + " + num2 + " ?";
-    question.innerHTML = English.question;
+     question.innerHTML = "What is " + num1 + " + " + num2 + " ?";
+    
      if (!prevQuestions.includes(question.innerHTML)){
        guessMore = false;
        prevQuestions[questNo % 3] = question.innerHTML;
