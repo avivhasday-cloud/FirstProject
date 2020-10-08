@@ -1,13 +1,14 @@
 
-
-let English = document.getElementById("En");
-let Hebrew = document.getElementById("He");
-English.addEventListener('click', function () {
-    window.location.href = "https://www.google.com/";
+let EnglishWasChosen, HebrewWasChosen;
+let English1 = document.getElementById("En");
+let Hebrew1 = document.getElementById("He");
+English1.addEventListener('click', function () {
+    window.location.href = "https://avivhasday-cloud.github.io/FirstProject/";
+    EnglishWasChosen = true;
 });
 
-Hebrew.addEventListener('click', function () {
-    console.log("he")
+Hebrew1.addEventListener('click', function () {
+    console.log("he");
+    HebrewWasChosen = true;
 });
 
-    

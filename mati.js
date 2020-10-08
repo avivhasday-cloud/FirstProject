@@ -1,3 +1,5 @@
+
+
 var position=0, correct=0, game, num1, num2, StartBtn, result, firstOption, secondOption, thirdOption, fourthOption, question, optionsArray, randomChoice, choices, choice, backgrounds, previousBG, selectBG,  i, questionHeader;
 var Happy = document.getElementById("Happy");
 var Sad = document.getElementById("Sad");
@@ -7,7 +9,38 @@ var wellDone = document.getElementById("wellDone");
 var prevQuestions = [" ", " ", " "];
 var questNo = 0;
 
+var Hebrew = {
+    title: "משחק במתמטיקה",
+    header: "לחץ בשביל להתחיל",
+    button1: "התחל",
+    question: "?" + num2 +  " + " + num1 + "כמה זה",
+    button2: "הבא",
+    correctAnswer: "כל הכבוד",
+    wrongAnswer: "אופסיי, תנסה שוב",
+    WellDone: "?כל הכבוד סיימת את המשחק, תרצה להתחיל שוב",
+};
 
+var English = {
+    title: "Math Game",
+    header: "Press to start",
+    button1: "Start",
+    question: "What is" + num1 + " + " + num2 + "?",
+    button2: "Next",
+    correctAnswer: "Good job",
+    wrongAnswer: "sorry, try again",
+    wellDone: "Well done you have finished the game, would you like to start again?"
+};
+
+
+// function isHebrew(){
+//     if (HebrewWasChosen==true){
+//         console.log("HE");
+//     }
+//     if (EnglishWasChosen==true){
+//         console.log("EN");
+//     }
+// }
+// console.log(isHebrew());
 
 function initialization(){
     changeBG();
@@ -60,7 +93,8 @@ function mathQuestions(){
      num1 = Math.floor((Math.random() * 5) + 1);
      num2 = Math.floor((Math.random() * 5) + 1);
      result = num1 + num2;
-     question.innerHTML = "What is " + num1 + " + " + num2 + " ?";
+    //  question.innerHTML = "What is " + num1 + " + " + num2 + " ?";
+    question.innerHTML = English.question;
      if (!prevQuestions.includes(question.innerHTML)){
        guessMore = false;
        prevQuestions[questNo % 3] = question.innerHTML;
@@ -69,7 +103,6 @@ function mathQuestions(){
       
    }
     randomChoice = Math.floor(Math.random() * 4);
-    // questionHeader.innerHTML = "Question " + (position + 1) + " of 5";
    
     
 
@@ -172,7 +205,7 @@ function checkAnswer(){
     
     
 }
+
+
  
 window.addEventListener('load', changeBG());
-
-
