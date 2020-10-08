@@ -1,0 +1,187 @@
+*{font-family: 'Roboto', sans-serif;}
+
+
+
+@keyframes click-wave {
+  0% {
+    height: 40px;
+    width: 40px;
+    opacity: 0.35;
+    position: relative;
+  }
+  100% {
+    height: 200px;
+    width: 200px;
+    margin-left: -80px;
+    margin-top: -80px;
+    opacity: 0;
+  }
+}
+
+.option-input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  position: relative;
+  top: 13.33333px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 40px;
+  width: 40px;
+  transition: all 0.15s ease-out 0s;
+  background: #cbd1d8;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 0.5rem;
+  outline: none;
+  position: relative;
+  z-index: 1000;
+}
+.option-input:hover {
+  background: #9faab7;
+}
+.option-input:checked {
+  background: green;
+}
+.option-input:checked::before {
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  content: '✔';
+  display: inline-block;
+  font-size: 26.66667px;
+  text-align: center;
+  line-height: 40px;
+}
+.option-input:checked::after {
+  -webkit-animation: click-wave 0.65s;
+  -moz-animation: click-wave 0.65s;
+  animation: click-wave 0.65s;
+  background: #40e0d0;
+  content: '';
+  display: block;
+  position: relative;
+  z-index: 100;
+}
+.option-input.radio {
+  border-radius: 50%;
+}
+.option-input.radio::after {
+  border-radius: 50%;
+}
+
+body {
+  margin: 0;
+  color: #9faab7;
+  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  width: 100%;
+
+
+}
+#box{
+  /* border:#19a7c0 3px inset; */
+  padding:10px 20px 20px 20px;
+  /* background-color:#e3fcfc; */
+   width:50%;
+
+}
+
+body label {
+  display: block;
+  line-height: 40px;
+}
+.button {
+    display: inline-block;
+    border-radius: 4px;
+    background-color:green;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 28px;
+    padding: 20px;
+    width: 150px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+  }
+
+  .button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+
+  .button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+
+  .button:hover span {
+    padding-right: 25px;
+  }
+
+  .button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+
+
+
+
+  h1{
+      text-align: center;
+      font: italic;
+      color: black;
+      font-weight: bolder;
+  }
+
+  #Happy, #Sad, #wellDone, #Monkey{
+    display: none;
+    width: 350px;
+    height:400px;
+  }
+  .Emojies{
+    display: flex;
+  }
+
+
+  h1{
+    text-align: center;
+    font: italic;
+
+    color: black;
+    font-size: xxx-large;
+    font-weight: bolder;
+  }
+
+  h2{
+    color: black;
+    font-size: xx-large;
+    font-weight: bolder;
+  }
+
+  .radioBtns, #box{
+    display: flex;
+  }
+
+  label{
+    padding: 15px;
+    font-size: xx-large;
+    color: darkslategray;
+    font-weight: bolder;
+  }
+
+  button{
+    display: inline-block;
+    text-align: center;
+  }
