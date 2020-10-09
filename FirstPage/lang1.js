@@ -11,5 +11,3 @@ Hebrew1.addEventListener('click', function () {
     console.log("he");
     HebrewWasChosen = true;
 });
-
-export {EnglishWasChosen, HebrewWasChosen};
