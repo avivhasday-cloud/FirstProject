@@ -182,8 +182,6 @@ function checkAnswer(x){
 
 
     choice = x.innerHTML;
-    choices = document.getElementsByClassName("button");
-    // checks if answer matches the correct choice
     console.log(choices)
     if(choice == result){
       //each time there is a correct answer this value increases
