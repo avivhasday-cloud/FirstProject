@@ -54,13 +54,13 @@ function initialization(){
     game = document.getElementById('Game');
 
     // appending data
-    game.innerHTML += '<div class="radioBtns"><input type="radio" class="option-input radio" name="buttons" /><label id="opt1"></label></div><br>';
-    game.innerHTML += '<div class="radioBtns"><input type="radio" class="option-input radio" name="buttons" /><label id="opt2"></label></div><br>';
-    game.innerHTML += '<div class="radioBtns"><input type="radio" class="option-input radio" name="buttons" /><label id="opt3"></label></div><br>';
-    game.innerHTML += '<div class="radioBtns"><input type="radio" class="option-input radio" name="buttons" /><label id="opt4"></label></div><br><br>';
-    game.innerHTML += '<button id="btn" class="button" style="vertical-align:middle" onclick="checkAnswer()"><span>Next </span></button>';
-    
-    
+    game.innerHTML += '<button id="opt1"  class="button" style="vertical-align:middle" onclick="checkAnswer(this)"></button><br>';
+    game.innerHTML += '<button id= "opt2" class="button" style="vertical-align:middle" onclick="checkAnswer(this)"></button><br>';
+    game.innerHTML += '<button id="opt3"  class="button" style="vertical-align:middle" onclick="checkAnswer(this)"></button><br>';
+    game.innerHTML += '<button id="opt4"  class="button" style="vertical-align:middle" onclick="checkAnswer(this)"></button>';
+
+
+
     // setting the rest of the variables
     // questionHeader = document.getElementById('myh2');
     question = document.getElementById('myh2');
@@ -70,7 +70,7 @@ function initialization(){
     thirdOption = document.getElementById('opt3');
     fourthOption = document.getElementById('opt4');
     optionsArray = [firstOption, secondOption, thirdOption, fourthOption];
-    
+
     // make the btn and giff hidden
     StartBtn.style.display = "none";
     wellDone.style.display = "none";
@@ -85,14 +85,14 @@ function mathQuestions(){
         Happy.style.display = 'none';
         wellDone.style.display = 'block';
         Monkey.style.display = 'block';
-        game.innerHTML = '<h2 id="myh2"></h2>'
+        game.innerHTML = '<h1 id="myh2"></h1>'
         game.innerHTML += '<br><button id="btn" class="button" type="button" style="vertical-align:middle;" onclick="initialization()">Start Game</button>';
         textToSpeech("you have finish the game");
         textToSpeech("Would you like to start again?");
         position = 0;
         return false;
     }
-    
+
    // define numbers and result
    var guessMore = true;
    while( guessMore ){
@@ -100,25 +100,25 @@ function mathQuestions(){
      num2 = Math.floor((Math.random() * 5) + 1);
      result = num1 + num2;
      question.innerHTML = "What is " + num1 + " + " + num2 + " ?";
-    
+
      if (!prevQuestions.includes(question.innerHTML)){
        guessMore = false;
        prevQuestions[questNo % 3] = question.innerHTML;
        questNo++;
      }
-      
+
    }
     randomChoice = Math.floor(Math.random() * 4);
-   
-    
+
+
 
     // question convert to voice
     setTimeout(textToSpeech(question.textContent), 5000)
-    
+
     var e = []
     // define random optionsArray, one of the optionsArray is the result
     for (i=0; i<optionsArray.length; i++){
-        
+
         if (optionsArray[i] > 0){
             optionsArray[i].innerHTML = 0;
         }
@@ -133,12 +133,13 @@ function mathQuestions(){
                 e.push(num);
                 optionsArray[i].innerHTML = num;
                 doIt = false;}
-              
+
             }
     }   }
-    
-      
+
+
 }
+
 
 function hiddenGif(x) {
    x.style.display='none'
@@ -151,7 +152,7 @@ function textToSpeech(x){
         Questionspeech.lang = 'en-US';
         window.speechSynthesis.speak(Questionspeech);
     }
-    
+
 }
 
 
@@ -173,32 +174,28 @@ function changeBG(){
     document.body.style.height = "100%"
     document.body.style.backgroundRepeat = "no-repeat";
     document.body.style.backgroundSize = "cover";
-   
+
 }
 
 
+function checkAnswer(x){
 
-function checkAnswer(){
-    choices = document.getElementsByName("buttons");
-    
-    for(i=0; i<choices.length; i++){
-        if(choices[i].checked){
-            choice = optionsArray[i].textContent;
-        }
-        choices[i].checked = false;
-    }
+
+    choice = x.innerHTML;
+    choices = document.getElementsByClassName("button");
     // checks if answer matches the correct choice
+    console.log(choices)
     if(choice == result){
       //each time there is a correct answer this value increases
       correct++;
       Sad.style.display = "none";
       Happy.style.display = "block";
-      textToSpeech("Great job!"); 
+      textToSpeech("Great job!");
       setTimeout(function(){hiddenGif(Happy);}, 1500);
     //   setTimeout(Happy.style.display = 'none', 5000);
-      
+
       position++;
-      setTimeout(function(){mathQuestions();}, 2500); 
+      setTimeout(function(){mathQuestions();}, 2500);
     }
     else{
         Happy.style.display = "none";
@@ -208,10 +205,10 @@ function checkAnswer(){
         textToSpeech(question.textContent);
 
     }
-    
-    
+
+
 }
 
 
- 
+
 window.addEventListener('load', changeBG());

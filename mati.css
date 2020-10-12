@@ -84,12 +84,12 @@ body {
 
 }
 .container{
-  padding-left:250px;
+  /* padding-left:50px; */
 }
 #box{
   display: flex;
   /* border:#19a7c0 3px inset; */
-  padding:10px 20px 20px 20px;
+  padding:10px 20px 20px 10px;
   /* background-color:#e3fcfc; */
    width:50%;
 
@@ -143,7 +143,7 @@ body label {
   body {
     font-family: "Lato", sans-serif;
   }
-  
+
   /* Fixed sidenav, full height */
   .sidenav {
     height: 100%;
@@ -157,7 +157,7 @@ body label {
     padding-top: 20px;
     opacity: 0.7;
   }
-  
+
   /* Style the sidenav links and the dropdown button */
   .sidenav a, .dropdown-btn {
     padding: 6px 8px 6px 16px;
@@ -171,41 +171,41 @@ body label {
     text-align: left;
     cursor: pointer;
     outline: none;
-    
-    
+
+
   }
-  
+
   /* On mouse-over */
   .sidenav a:hover, .dropdown-btn:hover {
     color: #f1f1f1;
   }
-  
+
   /* Main content */
   .main {
     margin-left: 200px; /* Same as the width of the sidenav */
     font-size: 20px; /* Increased text to enable scrolling */
     padding: 0px 10px;
   }
-  
+
   /* Add an active class to the active dropdown button */
   .active {
     background-color:darkcyan;
     color: white;
   }
-  
+
   /* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
   .dropdown-container {
     display: none;
     background-color: darkslategrey;
     padding-left: 8px;
   }
-  
+
   /* Optional: Style the caret down icon */
   .fa-caret-down {
     float: right;
     padding-right: 8px;
   }
-  
+
   /* Some media queries for responsiveness */
   @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
@@ -217,12 +217,13 @@ body label {
       font: italic;
       color: black;
       font-weight: bolder;
+      font-size: x-large;
   }
 
   #Happy, #Sad, #wellDone, #Monkey{
     display: none;
-    width: 350px;
-    height:400px;
+    width: 250px;
+    height:300px;
   }
   .Emojies{
     display: flex;
@@ -240,7 +241,7 @@ body label {
 
   h2{
     color: black;
-    font-size: xx-large;
+    font-size: x-large;
     font-weight: bolder;
   }
 
