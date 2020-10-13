@@ -96,8 +96,8 @@ function mathQuestions(){
    // define numbers and result
    var guessMore = true;
    while( guessMore ){
-     num1 = Math.floor((Math.random() * 5) + 1);
-     num2 = Math.floor((Math.random() * 5) + 1);
+     num1 = Math.floor((Math.random() * 10) + 1);
+     num2 = Math.floor((Math.random() * 10) + 1);
      result = num1 + num2;
      question.innerHTML = "What is " + num1 + " + " + num2 + " ?";
 
@@ -128,7 +128,7 @@ function mathQuestions(){
         else{
             var doIt = true;
             while (doIt == true){
-              var num = Math.floor((Math.random() * 10) + 1);
+              var num = Math.floor((Math.random() * 20) + 1);
               if (num != result && !e.includes(num)){
                 e.push(num);
                 optionsArray[i].innerHTML = num;
